@@ -231,36 +231,33 @@
             border-color: white;
         }
 
-        /* External link badges */
-        .link-badges {
+        /* External links row */
+        .external-links-bar {
+            background: var(--primary-blue);
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
+            align-items: center;
+            padding: 8px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .link-badge {
+        .external-link {
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            transition: all 0.2s ease;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .link-badge:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: white;
+        .external-link:hover {
+            background: rgba(255, 255, 255, 0.12);
             color: white;
-            text-decoration: none;
-            transform: translateY(-2px);
         }
 
         /* Custom Design Section */
@@ -686,11 +683,27 @@
                     <a class="nav-link" href="#features">Features</a>
                     <a class="nav-link" href="#roadmap">Roadmap</a>
                     <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="https://t.me/FapcoinByShitoshi" target="_blank">Telegram</a>
+                    <a class="nav-link" href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu" target="_blank">DexScreener</a>
+                    <a class="nav-link" href="https://www.dextools.io/app/en/token/fapcoincto" target="_blank">DEXTools</a>
+                    <a class="nav-link" href="https://www.mobyscreener.com/solana/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank">MobyScreener</a>
+                    <a class="nav-link" href="https://www.pumpscreener.org/token/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank">PumpScreener</a>
+                    <a class="nav-link" href="https://x.com/i/communities/1984709039897657545" target="_blank">X Community</a>
+                    <a class="nav-link" href="https://x.com/fapitalone/status/1986074907466142113" target="_blank">X Announcement</a>
                     <a class="nav-link btn-contact" href="https://jup.ag/tokens/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank">Buy
                         $FAPCOIN</a>
                 </div>
             </div>
         </nav>
+        <div class="external-links-bar">
+            <a class="external-link" href="https://t.me/FapcoinByShitoshi" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+            <a class="external-link" href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu" target="_blank"><i class="fas fa-chart-line"></i> DexScreener</a>
+            <a class="external-link" href="https://www.dextools.io/app/en/token/fapcoincto" target="_blank"><i class="fas fa-chart-pie"></i> DEXTools</a>
+            <a class="external-link" href="https://www.mobyscreener.com/solana/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank"><i class="fas fa-water"></i> MobyScreener</a>
+            <a class="external-link" href="https://www.pumpscreener.org/token/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank"><i class="fas fa-bolt"></i> PumpScreener</a>
+            <a class="external-link" href="https://x.com/i/communities/1984709039897657545" target="_blank"><i class="fab fa-twitter"></i> X Community</a>
+            <a class="external-link" href="https://x.com/fapitalone/status/1986074907466142113" target="_blank"><i class="fab fa-twitter"></i> X Announcement</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -710,35 +723,6 @@
                             target="_blank" class="btn btn-hero btn-secondary-hero">
                             Learn More
                         </a>
-                        <div class="link-badges">
-                            <a class="link-badge" href="https://t.me/FapcoinByShitoshi" target="_blank">
-                                <i class="fab fa-telegram-plane"></i> Telegram
-                            </a>
-                            <a class="link-badge"
-                                href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu"
-                                target="_blank">
-                                <i class="fas fa-chart-line"></i> DexScreener
-                            </a>
-                            <a class="link-badge" href="https://www.dextools.io/app/en/token/fapcoincto" target="_blank">
-                                <i class="fas fa-chart-pie"></i> DEXTools
-                            </a>
-                            <a class="link-badge"
-                                href="https://www.mobyscreener.com/solana/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump"
-                                target="_blank">
-                                <i class="fas fa-water"></i> MobyScreener
-                            </a>
-                            <a class="link-badge"
-                                href="https://www.pumpscreener.org/token/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump"
-                                target="_blank">
-                                <i class="fas fa-bolt"></i> PumpScreener
-                            </a>
-                            <a class="link-badge" href="https://x.com/i/communities/1984709039897657545" target="_blank">
-                                <i class="fab fa-twitter"></i> X Community
-                            </a>
-                            <a class="link-badge" href="https://x.com/fapitalone/status/1986074907466142113" target="_blank">
-                                <i class="fab fa-twitter"></i> X Announcement
-                            </a>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5 d-flex align-items-center justify-content-center">
