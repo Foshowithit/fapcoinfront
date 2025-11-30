@@ -298,6 +298,80 @@
             line-height: 1.8;
         }
 
+        /* Roadmap */
+        .roadmap-section {
+            padding: 80px 0;
+            background: #0c0c0c;
+            color: white;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, #131313, #0a0a0a);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 24px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .phase-title {
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-list {
+            padding-left: 18px;
+            margin: 0;
+            color: #dcdcdc;
+        }
+
+        .phase-list li {
+            margin-bottom: 8px;
+        }
+
+        .phase-group-title {
+            font-weight: 700;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+            color: #dcdcdc;
+        }
+
+        .summary-card strong {
+            color: white;
+        }
+
         /* About Section */
         .about-section {
             padding: 80px 0;
@@ -817,34 +891,102 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section" id="roadmap">
+    <!-- Roadmap Section -->
+    <section class="roadmap-section" id="roadmap">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6">
-                    <div class="stat-box">
-                        <div class="stat-number">35%+</div>
-                        <div class="stat-label">Supply Locked</div>
+            <div class="text-center mb-5">
+                <h2 class="section-title" style="color: white;">Tissue Paper Roadmap</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                    From the reset to the fap economy — every phase is mapped and in motion.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-title">Phase 1 – The Reset</div>
+                            <div class="phase-badge">Q4 2025 · Complete</div>
+                        </div>
+                        <ul class="phase-list">
+                            <li>LP burned, mint dead</li>
+                            <li>36% supply locked</li>
+                            <li>Branding, IP, metadata, and website secured</li>
+                            <li>Advisor + CMO onboarded</li>
+                            <li>Byrrgis curated listing approved</li>
+                            <li>Dev dump absorbed; chart rose 200k → 700k</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-box">
-                        <div class="stat-number">🔒</div>
-                        <div class="stat-label">Jupiter Locked</div>
+                <div class="col-lg-6">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-title">Phase 2 – Growing the Movement</div>
+                            <div class="phase-badge">Q1 2026 · Current</div>
+                        </div>
+                        <ul class="phase-list">
+                            <li>Social expansion: Telegram, Discord, X, TikTok, FB</li>
+                            <li>Meme and raid teams</li>
+                            <li>Artist and KOL collabs</li>
+                            <li>Cross-community alliances</li>
+                            <li>Supply locks and liquidity strengthening</li>
+                            <li>Targets: 1M MC, 100K volume</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-box">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Community Powered</div>
+                <div class="col-lg-6">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-title">Phase 3 – Real-World Business Expansion</div>
+                            <div class="phase-badge">Q2 2026</div>
+                        </div>
+                        <div class="phase-group-title">The Fap Agency:</div>
+                        <ul class="phase-list">
+                            <li>Creator partnerships and meme pipeline</li>
+                            <li>Paid partnerships and licensing</li>
+                            <li>Volume and exposure engine</li>
+                        </ul>
+                        <div class="phase-group-title">The Fap LLC:</div>
+                        <ul class="phase-list">
+                            <li>Legal structure for IP, contracts, merch, partnerships, revenue</li>
+                        </ul>
+                        <div class="phase-group-title">The Fap Factory:</div>
+                        <ul class="phase-list">
+                            <li>Adult novelty toys, meme merch, apparel, collectibles</li>
+                            <li>Revenue routed to LP, marketing, or buybacks</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-box">
-                        <div class="stat-number">🚀</div>
-                        <div class="stat-label">To The Moon</div>
+                <div class="col-lg-6">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-title">Phase 4 – Listings & Partnerships</div>
+                            <div class="phase-badge">Q3 2026</div>
+                        </div>
+                        <ul class="phase-list">
+                            <li>Tier 2 CEX targets: MEXC, Gate, Bitmart, Moonshot</li>
+                            <li>Tier 1 goals: KuCoin, OKX</li>
+                            <li>Partnerships with meme brands, adult-tech, toy companies, influencers</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="col-lg-6">
+                    <div class="phase-card">
+                        <div class="phase-header">
+                            <div class="phase-title">Phase 5 – The Fap Economy</div>
+                            <div class="phase-badge">Beyond 2026</div>
+                        </div>
+                        <ul class="phase-list">
+                            <li>Seasonal events: FapFest, Global Fap Week, Fapathon</li>
+                            <li>Light reward loops and community missions</li>
+                            <li>Global expansion: JP, KR, BR, MX, DE, PH</li>
+                            <li>Long-term goal: a sustainable Solana meme legacy ecosystem</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <strong>Summary:</strong> Fapcoin is now a community-owned brand with real business plans, real products,
+                and a roadmap built for long-term culture and growth.
             </div>
         </div>
     </section>
