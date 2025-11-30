@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FAPCOIN | Zero-Tax, Locked, On-Chain</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #000000;
+            --secondary-blue: #1a1a1a;
+            --accent-red: #000000;
+            --dark-blue: #000000;
+            --light-gray: #f8f9fa;
+            --text-dark: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: #000000;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .top-banner a {
+            color: white;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            padding: 0;
+            background: var(--primary-blue) !important;
+        }
+
+        .navbar-brand {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            text-decoration: none;
+            gap: 15px;
+        }
+
+        .navbar-brand:hover {
+            background: #f8f9fa;
+        }
+
+        .brand-logo {
+            height: 45px;
+            width: auto;
+            filter: none;
+        }
+
+        .brand-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0;
+            line-height: 1.1;
+        }
+
+        .brand-text-line2 {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            background: var(--primary-blue);
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            color: white !important;
+            padding: 20px 15px !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-contact {
+            background: var(--accent-red) !important;
+            color: white !important;
+            border: none;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            width: 500px;
+            height: 500px;
+            transform: translateY(-50%);
+            background: url('/static/tollogo.svg') no-repeat center;
+            background-size: contain;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            filter: brightness(1.2);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-section::before {
+                right: 5%;
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section::before {
+                display: none;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .btn-hero {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0;
+            transition: all 0.3s;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary-hero {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .btn-primary-hero:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .btn-secondary-hero {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary-hero:hover {
+            background: black;
+            color: white;
+            border-color: white;
+        }
+
+        /* Custom Design Section */
+        .custom-design {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .tolerance-ring-diagram {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Features Grid */
+        .features-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            height: 100%;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .about-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .btn-learn-more {
+            background: white;
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-learn-more:hover {
+            background: var(--accent-red);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--primary-blue);
+        }
+
+        .stat-box {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Chat Modal - Modern Design */
+        .chat-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .chat-modal.active {
+            display: flex;
+        }
+
+        .chat-container {
+            width: 90%;
+            max-width: 900px;
+            height: 85vh;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-header {
+            padding: 24px 30px;
+            background: var(--primary-blue);
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .chat-header p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 4px 0 0 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .chat-close {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+            background: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+
+        .chat-input-area {
+            padding: 20px 30px 25px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            background: #f3f4f6;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-size: 15px;
+            color: var(--text-dark);
+            outline: none;
+            transition: all 0.2s;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chat-input:focus {
+            border-color: var(--secondary-blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .chat-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .chat-send {
+            background: var(--secondary-blue);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 32px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .chat-send:hover {
+            background: #0052a3;
+            transform: translateX(2px);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+        }
+
+        .chat-send:active {
+            transform: scale(0.98);
+        }
+
+        /* Message Bubbles */
+        .message-bubble {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            color: var(--text-dark);
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 85%;
+            animation: fadeInMessage 0.3s ease;
+        }
+
+        @keyframes fadeInMessage {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-bubble em {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .message-bubble h3 {
+            color: var(--primary-blue);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .message-bubble strong {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .message-bubble a {
+            color: var(--secondary-blue);
+            text-decoration: underline;
+        }
+
+        .message-bubble a:hover {
+            color: #0052a3;
+        }
+
+        .user-message {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+
+        .user-message-bubble {
+            background: var(--secondary-blue);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 16px 16px 4px 16px;
+            max-width: 70%;
+            font-size: 15px;
+            line-height: 1.6;
+            animation: fadeInMessage 0.3s ease;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            gap: 8px;
+        }
+
+        .typing-indicator span {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .typing-indicator i {
+            color: var(--secondary-blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🚀 $FAPCOIN is LIVE! 35% + Community Supply Locked on Jupiter!
+        <a href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu" target="_blank">VIEW
+            CHART</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand" href="#" style="padding: 10px 20px; background: transparent;">
+                    <img src="fapcoin-logo.png" alt="Fapcoin" style="height: 50px; width: auto;">
+                </a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#tokenomics">Tokenomics</a>
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#roadmap">Roadmap</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link btn-contact" href="https://trade.padre.gg/rk/hog_crankr" target="_blank">Buy
+                        $FAPCOIN</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <h1>The Future of Meme Finance</h1>
+                        <p>$FAPCOIN: 35% + community supply locked on Jupiter, 100% community-driven.
+                            Join the revolution in decentralized meme tokens on Solana.</p>
+                        <a href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu"
+                            class="btn btn-hero btn-primary-hero"
+                            style="background: black; color: white; border: 2px solid white;">
+                            View Chart <i class="fas fa-chart-line ms-2"></i>
+                        </a>
+                        <a href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu"
+                            target="_blank" class="btn btn-hero btn-secondary-hero">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                    <img src="fappening-transparent.png" alt="The Fappening" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="custom-design" id="tokenomics">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">TOKENOMICS</h2>
+                    <p class="section-subtitle">
+                        $FAPCOIN is built on transparency and community trust. 35% + community supply
+                        locked on Jupiter for long-term stability. 100% of tokens in circulation on Solana.
+                        No hidden fees, no rug pulls, just pure meme magic.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="https://dexscreener.com/solana/aypfy111g9nt1jvunymtjd9is2m8c3pbveosmx9echeu"
+                            target="_blank" class="btn btn-primary"
+                            style="background: black; color: white; border: 2px solid white;">
+                            View on DexScreener
+                        </a>
+                        <a href="https://lock.jup.ag/token/8vGr1eX9vfpootWiUPYa5kYoGx9bTuRy2Xc4dNMrpump" target="_blank"
+                            class="btn btn-outline-light"
+                            style="background: black; color: white; border: 2px solid black;">
+                            View Jupiter Locks 🔒
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center d-flex align-items-center justify-content-center">
+                    <div style="font-size: 120px;">💎</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chart Section -->
+    <section class="custom-design" style="background: #000000; padding: 80px 0; position: relative; overflow: visible;">
+        <div class="d-none d-lg-block" style="position: absolute; left: 0; top: 715px; z-index: 99; width: 250px;">
+            <img src="llama-image.png" alt="Llama" style="width: 100%; height: auto;">
+        </div>
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title"
+                    style="color: white; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                    LIVE CHART
+                    <img src="randy-transparent.png" alt="Randy" style="height: 60px; width: auto;">
+                </h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                    Real-time $FAPCOIN price and trading data
+                </p>
+            </div>
+            <div class="row align-items-center" style="margin: 0; position: relative;">
+                <div class="col-lg-8 offset-lg-2">
+                    <!-- DexScreener Chart Embed -->
+                    <div id="dexscreener-embed"
+                        style="position: relative; width: 100%; padding-bottom: 60%; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(255,255,255,0.1);">
+                        <iframe
+                            src="https://dexscreener.com/solana/AypFy111g9Nt1JvUNYmtJd9iS2m8C3PbVEosmX9ecHEu?embed=1&theme=dark&trades=0&info=0"
+                            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;"
+                            title="Fapcoin DexScreener Chart"></iframe>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="https://trade.padre.gg/rk/hog_crankr" target="_blank"
+                            class="btn btn-hero btn-primary-hero"
+                            style="background: black; color: white; border: 2px solid white; font-size: 18px; padding: 15px 40px;">
+                            Buy $FAPCOIN on Padre <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose $FAPCOIN</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-lock feature-icon"></i>
+                        <h3>Supply Locked</h3>
+                        <p>35% + community supply locked on Jupiter. Your investment is protected from dumps.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Jupiter Locked</h3>
+                        <p>Liquidity locked on Jupiter DEX. Transparent and verifiable on-chain security.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-link feature-icon"></i>
+                        <h3>On-Chain Forever</h3>
+                        <p>Fully decentralized and immutable. No central authority can shut down $FAPCOIN.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h3>Community Driven</h3>
+                        <p>100% community owned and operated. Every holder has a voice in the future.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Meme Power</h3>
+                        <p>Backed by the strongest force in crypto: memes. Join the movement.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-rocket feature-icon"></i>
+                        <h3>To The Moon</h3>
+                        <p>Diamond hands only. HODL strong and watch $FAPCOIN reach new heights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="roadmap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">35%+</div>
+                        <div class="stat-label">Supply Locked</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">🔒</div>
+                        <div class="stat-label">Jupiter Locked</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Community Powered</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-box">
+                        <div class="stat-number">🚀</div>
+                        <div class="stat-label">To The Moon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section style="background: #ffffff; padding: 80px 0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" style="color: #000000;">GALLERY</h2>
+                <p class="section-subtitle" style="color: #333;">
+                    The Fapcoin Community
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-1.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-2.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-3.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-4.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-5.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-6.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-7.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-8.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-9.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-10.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-11.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-12.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-13.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div style="position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 3/4;">
+                        <img src="gallery-14.png" alt="Fapcoin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lore Section -->
+    <section class="custom-design" style="background: #000000; padding: 80px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div
+                        style="background: #1a1a1a; padding: 20px; border-radius: 12px; box-shadow: 0 10px 40px rgba(255,255,255,0.1);">
+                        <img src="lore-post.png" alt="Fapcoin Prophecy"
+                            style="width: 100%; height: auto; border-radius: 8px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="section-title" style="color: white; text-align: left;">THE LORE</h2>
+                    <p class="section-subtitle"
+                        style="color: rgba(255,255,255,0.8); text-align: left; margin-bottom: 30px;">
+                        From 2017 Prophecy to 2025 Reality
+                    </p>
+                    <div style="color: #ccc; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
+                        <p style="margin-bottom: 20px;">
+                            <strong style="color: white;">September 17, 2017:</strong><br>
+                            On 4chan's /biz/ board, an anonymous visionary posted a simple prophecy:<br>
+                            <em>"First Fartcoin... then Fapcoin."</em><br>
+                            No roadmap. No launch. Just words waiting in the archives.
+                        </p>
+                        <p style="margin-bottom: 20px;">
+                            <strong style="color: white;">October 18, 2024:</strong><br>
+                            Shitoshi (Satoshi's filthier cousin) launches $FARTCOIN, then vanishes.<br>
+                            A CTO emerges and sends Fartcoin to a $2.5B market cap. The lore reignites.
+                        </p>
+                        <p style="margin-bottom: 20px;">
+                            <strong style="color: white;">October 18, 2025:</strong><br>
+                            Exactly one year later, Shitoshi returns. He launches $FAPCOIN, beats frontrunners in PvP,
+                            locks 6.5% of supply... then disappears again. No tweets. No trace. Just silence.
+                        </p>
+                        <p style="margin-bottom: 20px;">
+                            <strong style="color: white;">November 2025 - Present:</strong><br>
+                            The community takes over. After Shitoshi's dump, the team is buying and locking supply.
+                            <strong>35%+ now locked on Jupiter.</strong> 💎💦<br><br>
+                            From a 2017 meme to a 2025 on-chain prophecy — $FAPCOIN has become crypto's mirror:
+                            absurd, unstoppable, and inevitable.
+                        </p>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="https://warosu.org/biz/thread/3518707" target="_blank"
+                            class="btn btn-hero btn-primary-hero"
+                            style="background: black; color: white; border: 2px solid white;">
+                            View 2017 Thread <i class="fas fa-external-link-alt ms-2"></i>
+                        </a>
+                        <a href="https://x.com/FapitalOne/status/1990849662677352608" target="_blank"
+                            class="btn btn-outline-light">
+                            Read Full Story <i class="fab fa-twitter ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">ABOUT $FAPCOIN</h2>
+                    <p>
+                        $FAPCOIN is the next generation of meme tokens on Solana, built on principles of transparency,
+                        community ownership, and pure degen energy. With 35% + community supply locked on Jupiter,
+                        and 100% community control, we're redefining what it means to be a meme coin.
+                    </p>
+                    <p>
+                        No VCs, no team tokens, no bullshit. Just a community of diamond-handed degens
+                        ready to take $FAPCOIN to the moon. Join us on this wild ride and become part
+                        of crypto history on Solana.
+                    </p>
+                    </p>
+                    <a href="#" target="_blank" class="btn btn-learn-more mt-3">
+                        Join the Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Three.js for 3D visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/examples/js/exporters/STLExporter.js"></script>
+    <script src="/static/js/ring3d.js"></script>
+
+    <script>
+        // Chat functionality
+        let sessionId = 'session_' + Date.now();
+
+        function openChat() {
+            document.getElementById('chatModal').classList.add('active');
+            document.getElementById('chatInput').focus();
+        }
+
+        function closeChat() {
+            document.getElementById('chatModal').classList.remove('active');
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Add user message to chat
+            const messagesDiv = document.getElementById('chatMessages');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'user-message';
+            userMessageDiv.innerHTML = `<div class="user-message-bubble">${message}</div>`;
+            messagesDiv.appendChild(userMessageDiv);
+
+            // Clear input
+            input.value = '';
+            input.disabled = true;
+
+            // Add typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing';
+            typingDiv.innerHTML = `
+            <div class="typing-indicator">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <span>Analyzing your requirements...</span>
+            </div>
+        `;
+            messagesDiv.appendChild(typingDiv);
+
+            // Scroll to bottom
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        message: message
+                    })
+                });
+
+                // Remove typing indicator
+                document.getElementById('typing').remove();
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // Add assistant response
+                    const assistantDiv = document.createElement('div');
+                    assistantDiv.className = 'message-bubble';
+                    assistantDiv.innerHTML = data.reply;
+                    messagesDiv.appendChild(assistantDiv);
+                } else {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'message-bubble';
+                    errorDiv.innerHTML = '<p style="color: #ff6b6b;">Sorry, I encountered an error. Please try again.</p>';
+                    messagesDiv.appendChild(errorDiv);
+                }
+            } catch (error) {
+                document.getElementById('typing')?.remove();
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'message-bubble';
+                errorDiv.innerHTML = '<p style="color: #ff6b6b;">Connection error. Please make sure the server is running.</p>';
+                messagesDiv.appendChild(errorDiv);
+            }
+
+            // Re-enable input
+            input.disabled = false;
+            input.focus();
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Counter animation
+        $(document).ready(function () {
+            let hasAnimated = false;
+
+            function animateCounters() {
+                if (hasAnimated) return;
+
+                $('.stat-number[data-count]').each(function () {
+                    var $this = $(this);
+                    var countTo = $this.attr('data-count');
+
+                    $({ countNum: 0 }).animate({
+                        countNum: countTo
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(countTo);
+                        }
+                    });
+                });
+
+                hasAnimated = true;
+            }
+
+            // Check if stats section is in view
+            $(window).scroll(function () {
+                var statsTop = $('.stats-section').offset()?.top;
+                if (statsTop && $(window).scrollTop() + $(window).height() > statsTop) {
+                    animateCounters();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
