@@ -136,6 +136,20 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        .navbar-toggler {
+            display: none;
+            margin-left: auto;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 12px;
+            background: transparent;
+            color: white;
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
         @media (max-width: 1400px) {
             .nav-link {
                 padding: 12px 8px !important;
@@ -143,6 +157,35 @@
             }
             .navbar-nav {
                 gap: 4px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 10px 16px;
+                gap: 0;
+            }
+
+            .navbar-nav.mobile-open {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 12px 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-toggler {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 
@@ -738,6 +781,9 @@
                 <a class="navbar-brand" href="#" style="padding: 10px 20px; background: transparent;">
                     <img src="fapcoin-logo.png" alt="Fapcoin" style="height: 50px; width: auto;">
                 </a>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation" id="navbarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="#tokenomics">Tokenomics</a>
                     <a class="nav-link" href="#features">Features</a>
@@ -1311,6 +1357,17 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        // Mobile nav toggle
+        const navbarToggle = document.getElementById('navbarToggle');
+        const navbarLinks = document.querySelector('.navbar-nav');
+        if (navbarToggle && navbarLinks) {
+            navbarToggle.addEventListener('click', () => {
+                navbarLinks.classList.toggle('mobile-open');
+            });
+        }
     </script>
 
 </body>
